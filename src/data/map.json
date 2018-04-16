@@ -1,0 +1,118 @@
+[
+    {
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#e2e4e6"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "color": "#ad987e"
+        },
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.natural.landcover",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road.arterial",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#eaeaea"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#eaeaea"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "color": "#a0a0a0"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.line",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#f1f2f3"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station",
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "lightness": 10
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "color": "#90c7ff"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#ecf0f4"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "visibility": "on"
+        }
+      ]
+    }
+  ]

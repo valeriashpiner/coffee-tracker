@@ -20,6 +20,16 @@ const nestedStackNavigatorStyles = {
   },
 };
 
+const nestedStackNavigatorStylesTransparent = { 
+  headerStyle:{ 
+    position: 'absolute', 
+    backgroundColor: 'transparent', 
+    zIndex: -10, 
+    top: 0, 
+    left: 0, 
+    right: 0,
+    borderWidth: 0 } };
+
 export const RootTabs = TabNavigator({
   Tabs: {
     screen: StackNavigator({
@@ -27,7 +37,7 @@ export const RootTabs = TabNavigator({
         screen: SearchScreen,
         navigationOptions: {
        // headerTitle: <NavigationBar title={navigationLocals.COURSES_CATALOG} tab='courses' />,
-          ...nestedStackNavigatorStyles,
+          ...nestedStackNavigatorStylesTransparent,
         },
       },
     }, { headerMode: 'screen' }),
