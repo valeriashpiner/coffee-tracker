@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import mapStyle from '../../data/map';
-import styles from './styles';
+import { styles } from './style';
 
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO    = width / height;
@@ -54,7 +54,7 @@ export default class SearchScreen extends React.Component {
       this.setState({newRegion});
     });
   }
-  
+
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchID);
   }
