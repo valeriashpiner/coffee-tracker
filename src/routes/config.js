@@ -2,11 +2,19 @@ import * as React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { View } from 'react-native';
 
+import {
+  favoritePlaces,
+  tracker,
+  specialOffers,
+  settings,
+  search
+} from '../assets';
 import SearchScreen from '../containers/search';
 import FavoriteScreen from '../containers/favorite';
 import SettingsScreen from '../containers/settings';
 import TrackerScreen from '../containers/tracker';
 import SpecialOfferScreen from  '../containers/offers';
+import { TabNavigationIcon } from './navigation-icon';
 import { navigationLocals } from '../constants/locals';
 
 const nestedStackNavigatorStyles = {
@@ -17,7 +25,7 @@ const nestedStackNavigatorStyles = {
     color: '#ffffff',
     alignSelf: 'center',
     textAlign: 'center',
-  },
+  }
 };
 
 const nestedStackNavigatorStylesTransparent = { 
@@ -43,13 +51,13 @@ export const RootTabs = TabNavigator({
     }, { headerMode: 'screen' }),
     navigationOptions: {
       title: navigationLocals.SEARCH,
-    //   tabBarIcon: props => (
-    //     <TabNavigationIcon
-    //       width={23}
-    //       height={19}
-    //       icon={catalogIcon}
-    //       {...props}
-    //     />),
+      tabBarIcon: props => (
+        <TabNavigationIcon
+          width={21}
+          height={21}
+          icon={search}
+          {...props}
+        />),
     },
   },
   FavoriteScreen: {
@@ -64,13 +72,13 @@ export const RootTabs = TabNavigator({
     }, { headerMode: 'screen' }),
     navigationOptions: {
       title: navigationLocals.LIKED,
-    //   tabBarIcon: props => (
-    //     <TabNavigationIcon
-    //       width={29}
-    //       height={17}
-    //       icon={myCoursesIcon}
-    //       {...props}
-    //     />),
+      tabBarIcon: props => (
+        <TabNavigationIcon
+          width={24}
+          height={21}
+          icon={favoritePlaces}
+          {...props}
+        />),
     },
   },
   TrackerScreen: {
@@ -85,13 +93,13 @@ export const RootTabs = TabNavigator({
     }, { headerMode: 'screen' }),
     navigationOptions: {
       title: navigationLocals.TRACKER,
-    //   tabBarIcon: props => (
-    //     <TabNavigationIcon
-    //       width={27}
-    //       height={19}
-    //       icon={knowledgeBaseIcon}
-    //       {...props}
-    //     />),
+      tabBarIcon: props => (
+        <TabNavigationIcon
+          width={17}
+          height={24}
+          icon={tracker}
+          {...props}
+        />),
     },
   },
   SpecialOffer: {
@@ -106,13 +114,13 @@ export const RootTabs = TabNavigator({
     }, { headerMode: 'screen' }),
     navigationOptions: {
       title: navigationLocals.SPECIAL,
-    //   tabBarIcon: props => (
-    //     <TabNavigationIcon
-    //       width={23}
-    //       height={19}
-    //       icon={calendarIcon}
-    //       {...props}
-    //     />),
+      tabBarIcon: props => (
+        <TabNavigationIcon
+          width={22}
+          height={22}
+          icon={specialOffers}
+          {...props}
+        />),
     },
   },
   Settings: {
@@ -135,13 +143,13 @@ export const RootTabs = TabNavigator({
     }, { headerMode: 'screen' }),
     navigationOptions: {
       title: navigationLocals.PROFILE,
-    //   tabBarIcon: props => (
-    //     <TabNavigationIcon
-    //       width={20}
-    //       height={20}
-    //       icon={profileIcon}
-    //       {...props}
-    //     />),
+      tabBarIcon: props => (
+        <TabNavigationIcon
+          width={22}
+          height={22}
+          icon={settings}
+          {...props}
+        />),
     },
   },
 }, {
@@ -149,22 +157,23 @@ export const RootTabs = TabNavigator({
   initialRouteName: 'Tabs',
   tabBarOptions: {
     activeTintColor: '#c9a175',
-    inactiveTintColor: '#8c8c8c',
+    inactiveTintColor: '#d1d1d1',
     style: {
       backgroundColor: '#ffffff',
+      borderTopColor: '#ffffff',
       height: 57,
       paddingLeft: 10,
       shadowOffset: {
         width: 0,
         height: -1,
       },
-      shadowOpacity: 0.2,
+      shadowOpacity: 0.1,
       shadowColor: '#000000',
     },
     labelStyle: {
-      fontSize: 8,
-      margin: 0,
-      paddingTop: 6,
+      fontSize: 10,
+      marginBottom: 5,
+      paddingTop: 0,
     },
     showIcon: true,
     allowFontScaling: false,

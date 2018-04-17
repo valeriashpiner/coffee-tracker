@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { Text, View, Dimensions, Image } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import mapStyle from '../../data/map';
+import { currentPlace } from '../../assets';
 import { styles } from './style';
 
 const { width, height } = Dimensions.get('window');
@@ -60,16 +61,22 @@ export default class SearchScreen extends React.Component {
   }
 
     render() {
+      let latitude = this.state.region.latitude;
+      let longitude = this.state.region.longitude;
       return (
         <View style={styles.container}>
           <MapView
-           provider={PROVIDER_GOOGLE}
-          customMapStyle={mapStyle}
-          style={styles.map}
-          region={this.state.region}
-          showsUserLocation={true}
-          followUserLocation={true}
-          />
+            provider={PROVIDER_GOOGLE}
+            customMapStyle={mapStyle}
+            style={styles.map}
+            region={this.state.region}
+            followUserLocation={true}
+          >
+            <MapView.Marker
+              coordinate={{ latitude, longitude }}>
+              <Image source={currentPlace} style={{ width: 40, height: 40 }} />
+            </MapView.Marker>
+          </MapView>
         </View>
       );
     }
