@@ -3,6 +3,9 @@ package com.coffeetracker;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.auth0.react.A0Auth0Package;
+import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -22,7 +25,10 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+          new MapsPackage(),
+            new A0Auth0Package(),
+            new RNGooglePlacesPackage()
       );
     }
 
