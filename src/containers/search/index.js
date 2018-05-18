@@ -1,6 +1,10 @@
 import React from 'react';
-import { Text, View, Dimensions, Image } from 'react-native';
+import { Text, View, Dimensions, Image, TextInput, TouchableOpacity } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import RNGooglePlaces from 'react-native-google-places';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
+
+import { filter } from '../../assets';
 import mapStyle from '../../data/map';
 import { currentPlace } from '../../assets';
 import { styles } from './style';
@@ -23,7 +27,8 @@ export default class SearchScreen extends React.Component {
         longitude: LONGITUDE,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA
-      }
+      },
+      place: [],
     }
   }
 
@@ -60,9 +65,19 @@ export default class SearchScreen extends React.Component {
     navigator.geolocation.clearWatch(this.watchID);
   }
 
+  openSearchModal(place) {
+    RNGooglePlaces.getAutocompletePredictions('Lagos', {
+      type: 'cities',
+      country: 'NG'
+    })
+      .then((place) => { return place })
+      .catch(error => console.log(error.message));
+  }
+
     render() {
       let latitude = this.state.region.latitude;
       let longitude = this.state.region.longitude;
+ 
       return (
         <View style={styles.container}>
           <MapView
@@ -77,6 +92,19 @@ export default class SearchScreen extends React.Component {
               <Image source={currentPlace} style={{ width: 40, height: 40 }} />
             </MapView.Marker>
           </MapView>
+          <View style={styles.allNonMapThings}>
+          <TouchableOpacity style={styles.inputContainer} onPress={() => this.openSearchModal()}>
+            <TextInput
+              placeholder='Enter cafe name, street, etc.'
+              style={styles.input}
+            />
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => this.openSearchModal()}>
+                <Image source={filter} style={styles.filterImage} />
+            </TouchableOpacity>
+          </View> 
+
+          <KeyboardSpacer/> 
         </View>
       );
     }

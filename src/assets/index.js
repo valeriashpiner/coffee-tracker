@@ -23,7 +23,8 @@ const IMAGES = {
     favoritePlaces: require('../../assets/icons/iphone-standart/liked2x.png'),
     settings: require('../../assets/icons/iphone-standart/settings2x.png'),
     tracker: require('../../assets/icons/iphone-standart/tracker2x.png'),
-    search: require('../../assets/icons/iphone-standart/search2x.png')
+    search: require('../../assets/icons/iphone-standart/search2x.png'),
+    filter: require('../../assets/icons/iphone-standart/filters2x.png')
   },
   iPhoneX: {
     currentPlace: require('../../assets/icons/iphonex/currentPlace3x.png'),
@@ -31,7 +32,8 @@ const IMAGES = {
     favoritePlaces: require('../../assets/icons/iphonex/liked3x.png'),
     settings: require('../../assets/icons/iphonex/settings3x.png'),
     tracker: require('../../assets/icons/iphonex/tracker3x.png'),
-    search: require('../../assets/icons/iphonex/search3x.png')
+    search: require('../../assets/icons/iphonex/search3x.png'),
+    filter: require('../../assets/icons/iphonex/filters3x.png')
   },
 };
 
@@ -43,3 +45,4 @@ export const settings = icons.settings;
 export const tracker = icons.tracker;
 export const favoritePlaces = icons.favoritePlaces;
 export const search = icons.search;
+export const filter = icons.filter;
